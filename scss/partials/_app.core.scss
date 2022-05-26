@@ -1,0 +1,661 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+body {
+  margin: 0;
+  color: $tertiary;
+  line-height: 1.8;
+  overflow-x: hidden !important;
+  overflow-y: scroll;
+  font-family: $global-font;
+  animation: fadeIn 2s;
+}
+body,
+textarea,
+input,
+select {
+  font-family: $global-font;
+  color: $tertiary;
+  font-size: 15px;
+  font-weight: 300;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: $heading-font;
+}
+p {
+  margin: 15px 0 0 0;
+  float: left;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: $tertiary;
+  position: relative;
+  display: inline-block;
+  transition: all 0.5s;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    top: 100%;
+    left: 0;
+    background: $primary;
+    transition: transform 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+    z-index: 9;
+  }
+  &:hover {
+    color: $tertiary;
+    &::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+}
+.wrapper {
+  width: 100%;
+  float: left;
+  position: relative;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.center__block {
+  display: table;
+  margin: 0 auto;
+}
+.text__center {
+  text-align: center;
+}
+.text__right {
+  text-align: right;
+}
+section {
+  @include fullcol();
+}
+.container {
+  width: 1170px;
+  margin: auto;
+  position: relative;
+  @media screen and (max-width: 1280px) {
+    width: 1140px;
+  }
+  @media screen and (max-width: 1170px) {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+.col__1 {
+  width: 8.33333333%;
+  float: left;
+  padding: 0 15px;
+  position: relative;
+}
+.col__2 {
+  width: 16.66666667%;
+  float: left;
+  padding: 0 15px;
+  position: relative;
+}
+.col__3 {
+  width: 25%;
+  float: left;
+  padding: 0 15px;
+  position: relative;
+}
+.col__4 {
+  width: 33.33333333%;
+  float: left;
+  padding: 0 15px;
+  position: relative;
+}
+.col__5 {
+  width: 41.66666667%;
+  float: left;
+  padding: 0 15px;
+  position: relative;
+}
+.col__6 {
+  width: 50%;
+  float: left;
+  padding: 0 15px;
+  position: relative;
+}
+.col__7 {
+  width: 58.33333333%;
+  float: left;
+  padding: 0 15px;
+  position: relative;
+}
+.col__8 {
+  width: 66.66666667%;
+  float: left;
+  padding: 0 15px;
+  position: relative;
+}
+.col__9 {
+  width: 75%;
+  float: left;
+  padding: 0 15px;
+  position: relative;
+}
+.col__10 {
+  width: 83.33333333%;
+  float: left;
+  padding: 0 15px;
+  position: relative;
+}
+.col__11 {
+  width: 91.66666667%;
+  float: left;
+  padding: 0 15px;
+  position: relative;
+}
+.col {
+  width: 100%;
+  float: left;
+  padding: 0 15px;
+  position: relative;
+}
+.p0 {
+  padding: 0;
+}
+.m0 {
+  margin: 0;
+}
+.mt__40 {
+  margin-top: 40px;
+}
+.mt__15 {
+  margin-top: 15px;
+}
+.mt__75 {
+  margin-top: 75px;
+}
+strong {
+  font-weight: 700;
+  color: $primary;
+}
+.up {
+  font-size: 40px;
+  font-weight: 600;
+  transition: $transition;
+  cursor: pointer;
+  width: 60px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  margin: auto;
+  display: table;
+  background: $secondary;
+}
+h2 {
+  color: $gray;
+  font-size: 40px;
+}
+.header {
+  @include flexcenter(center, space-between, inherit);
+  background: $secondary;
+  width: 100%;
+  padding: 0 35px;
+  margin-top: 22px;
+  .logo {
+    display: inline-block;
+    &::after {
+      display: none;
+    }
+  }
+  nav {
+    @media screen and(max-width:1024px) {
+      display: none;
+    }
+    li {
+      display: block;
+      float: left;
+      padding: 0 15px;
+      position: relative;
+      text-decoration: none;
+      transition-duration: 0.5s;
+      a {
+        color: $primary;
+        transition: $transition;
+        &:hover {
+          cursor: pointer;
+          color: $primary;
+        }
+      }
+    }
+  }
+  .cart {
+    @include flexcenter(center, inherit, inherit);
+    span {
+      background: $primary;
+      color: $secondary;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      margin-left: 10px;
+      float: right;
+      text-align: center;
+      line-height: 34px;
+      font-size: 14px;
+    }
+    &::after {
+      display: none;
+    }
+  }
+}
+.wide {
+  padding: 0 35px;
+}
+.mt__23 {
+  margin-top: 23px;
+}
+.cart__list {
+  @include fullcol();
+  .cart__left,
+  .cart__right {
+    width: 50%;
+    position: relative;
+    float: left;
+  }
+  .cart__left {
+    .fiction__bg {
+      figure {
+        @include fullcol();
+        padding: 105px 85px;
+        background: $shade;
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  .cart__right {
+    padding: 60px 80px 0 80px;
+    @media screen and(max-width:1366px) {
+      padding: 0 80px 0 80px;
+    }
+    h2 {
+      font-size: 30px;
+    }
+    p {
+      padding-right: 250px;
+      @media screen and(max-width:1366px) {
+        padding-right: 90px;
+      }
+    }
+    .rate {
+      @include fullcol();
+      margin-top: 31px;
+    }
+    a {
+      color: $dark-blue;
+      font-size: 13px;
+      margin-top: 30px;
+    }
+    form {
+      width: 40%;
+      float: left;
+      label {
+        @include fullcol();
+        font-weight: 700;
+        margin: 25px 0 10px;
+        font-size: 11px;
+        color: $primary;
+        &:nth-child(1) {
+          margin-top: 30px;
+        }
+      }
+      .selectdiv {
+        position: relative;
+        float: left;
+        width: 100%;
+        label {
+          margin: 0;
+        }
+      }
+      select::-ms-expand {
+        display: none;
+      }
+      .selectdiv {
+        &:after {
+          content: "\eb3a";
+          font-family: unicons-line;
+          font-size: 17px;
+          color: #333;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+          position: absolute;
+          pointer-events: none;
+        }
+        select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          display: block;
+          width: 100%;
+          height: 50px;
+          float: left;
+          padding: 0px 15px;
+          line-height: 1.75;
+          color: #333;
+          background-color: #ffffff;
+          background-image: none;
+          border: 1px solid $stroke;
+          border-radius: 3px;
+          -ms-word-break: normal;
+          word-break: normal;
+        }
+      }
+      .radio__btns {
+        @include fullcol();
+        .radio {
+          margin: 0 5px 0 0;
+          display: inline-block;
+          label {
+            margin: 0;
+            color: $gray;
+            font-weight: 300;
+            font-size: 13px;
+          }
+          input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            + .radio-label:before {
+              content: "";
+              background: $secondary;
+              border-radius: 100%;
+              border: 1px solid $stroke;
+              display: inline-block;
+              width: 30px;
+              height: 30px;
+              position: relative;
+              top: -0.2em;
+              margin-right: 1em;
+              vertical-align: top;
+              cursor: pointer;
+              text-align: center;
+              transition: all 250ms ease;
+            }
+            &:checked + .radio-label:before {
+              background-color: $gray;
+              box-shadow: inset 0 0 0 7px $secondary;
+            }
+            &:focus + .radio-label:before {
+              outline: none;
+            }
+            &:disabled + .radio-label:before {
+              box-shadow: inset 0 0 0 7px $secondary;
+              border-color: #b4b4b4;
+              background: #b4b4b4;
+            }
+            + .radio-label:empty:before {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+
+      button {
+        background: $gray;
+        color: $secondary;
+        border: 0;
+        @include fullcol();
+        height: 60px;
+        cursor: pointer;
+        margin-top: 30px;
+      }
+    }
+  }
+}
+.flexbox {
+  @include fullcol();
+  @include flexcenter(flex-start, inherit, inherit);
+  .flex__column & {
+    margin-top: 115px;
+    @media screen and(max-width:767px) {
+      margin-top: 30px;
+    }
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+      @media screen and(max-width:767px) {
+        flex-direction: column-reverse;
+      }
+    }
+    h3 {
+      font-size: 30px;
+      color: $gray;
+    }
+  }
+  @media screen and(max-width:767px) {
+    flex-direction: column-reverse;
+  }
+  .left {
+    width: 30%;
+    padding: 0 152px 0 56px;
+    @media screen and(max-width:1366px) {
+      width: 40%;
+    }
+  }
+  .right {
+    width: 70%;
+    @media screen and(max-width:1366px) {
+      width: 60%;
+    }
+    figure {
+      @include fullcol();
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+.wide--img {
+  @include fullcol();
+  margin-top: 115px;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.mt__115 {
+  margin-top: 115px;
+}
+ul.related {
+  @include fullcol();
+  margin-top: 51px;
+  li {
+    width: 33.33%;
+    float: left;
+    padding: 15px;
+    .related--box {
+      @include fullcol();
+      text-align: center;
+      figure {
+        @include fullcol();
+        background: #f5f5f5;
+        padding: 47px 48px;
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      h4 {
+        color: $dark-blue;
+        font-size: 18px;
+        margin-top: 35px;
+        @include fullcol();
+      }
+    }
+    ul {
+      @include fullcol();
+      margin-top: 21px;
+      li {
+        @include fullcol();
+        padding: 0;
+      }
+    }
+  }
+}
+footer {
+  @include fullcol();
+  margin-top: 100px;
+  .footer__flex {
+    @include fullcol();
+    @include flexcenter(center, inherit, inherit);
+    border-top: #ddd 1px solid;
+    border-bottom: #ddd 1px solid;
+    padding: 118px 0;
+    .box {
+      flex: 0 33.33%;
+      padding: 0 30px;
+      text-align: center;
+      h5 {
+        font-size: 25px;
+        color: $gray;
+      }
+      .subscribe {
+        @include fullcol();
+        @include flexcenter(center, space-between, inherit);
+        margin-top: 15px;
+        background: $secondary;
+        border-radius: 3px;
+        border: $stroke 1px solid;
+        input {
+          width: 75%;
+          border: 0;
+          background: none;
+          height: 55px;
+          padding: 0 15px;
+          float: left;
+          @media screen and(max-width:1366px) {
+            width: 68%;
+          }
+        }
+        button {
+          width: 15%;
+          border: 0;
+          float: left;
+          height: 55px;
+          background: none;
+          cursor: pointer;
+          font-size: 20px;
+        }
+      }
+      ul.social {
+        @include flexcenter(center, center, inherit);
+        li {
+          display: inline-block;
+          a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: none;
+            text-align: center;
+            line-height: 40px;
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .copyrights {
+    @include fullcol();
+    @include flexcenter(center, space-between, inherit);
+    padding: 30px 0;
+    font-size: 10px;
+    color: #999;
+    text-transform: uppercase;
+  }
+}
+/*Queries*/
+@media screen and (max-width: 1024px) {
+}
+/* tab-landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+}
+/* tab-portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+/* mobile-common */
+@media screen and (max-width: 767px) {
+  .col__1,
+  .col__2,
+  .col__3,
+  .col__4,
+  .col__5,
+  .col__6,
+  .col__7,
+  .col__8,
+  .col__9,
+  .col__10,
+  .col__11,
+  .col,
+  .cart__list .cart__left,
+  .cart__list .cart__right,
+  .cart__list .cart__right form,
+  .flexbox .left,
+  .flexbox .right {
+    width: 100%;
+  }
+  section {
+    padding: 30px 0;
+  }
+  .cart__list .cart__right,
+  .flexbox .left,
+  .cart__list .cart__right p {
+    padding: 0;
+  }
+  .cart__list .cart__left .fiction__bg figure {
+    padding: 15px;
+  }
+  footer {
+    .footer__flex {
+      padding: 15px 0;
+      .box {
+        flex: 0 100%;
+        padding: 15px;
+      }
+    }
+  }
+  .mt__115,
+  .wide--img,
+  ul.related {
+    margin-top: 30px;
+  }
+}
+/* mobile-landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (orientation: landscape) {
+}
+/* mobile-portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (orientation: portrait) {
+  ul.related li {
+    width: 100%;
+    .related--box figure {
+      padding: 15px;
+    }
+  }
+  h2 {
+    font-size: 30px;
+  }
+}
